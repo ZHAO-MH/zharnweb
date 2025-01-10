@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZHARN</title>
+  <style>
+    @font-face {
+      font-family: '苹方_粗体';
+      src: url('./fonts/PingFangSC-Regular.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: '苹方_特粗';
+      src: url('./fonts/PingFangSC-Semibold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: '苹方_中等';
+      src: url('./fonts/PingFangSC-Medium.woff2') format('woff2');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .justify-start {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .justify-center {
+      display: flex;
+      justify-content: center;
+    }
+
+    .justify-end {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .justify-between {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .items-start {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .items-end {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .items-center {
+      display: flex;
+      align-items: center;
+    }
+
+    .no-shrink {
+      flex-shrink: 0;
+    }
+
+    .music_0_1 {
+      position: absolute;
+      width: 1920px;
+      height: 3240px;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      background-color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+    }
+
+    .music_0_87 {
+      position: relative;
+      width: 1187px;
+      height: 80px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 3;
+      margin-top: 45px;
+    }
+
+    .music_0_88 {
+      position: absolute;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      border-width: 1.5px 1.5px 1.5px 1.5px;
+      border-style: solid;
+      border-color: #383838;
+      right: 0%;
+      bottom: 0%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      isolation: isolate;
+      -webkit-mask-image: linear-gradient(0, #000000, #000000);
+    }
+
+    .music_0_89 {
+      position: relative;
+      width: 578px;
+      height: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 0;
+      margin-left: 392px;
+      margin-top: 5px;
+    }
+
+    .music_0_97 {
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      font-size: 30px;
+      font-family: '苹方_粗体';
+      font-weight: normal;
+      line-height: 42px;
+      color: #a3a3a5;
+      white-space: pre;
+      z-index: 2;
+      position: relative;
+      margin-left: 0;
+      margin-top: 13.5px;
+    }
+
+    .music_0_96 {
+      font-size: 30px;
+      font-family: '苹方_粗体';
+      font-weight: normal;
+      line-height: 42px;
+      letter-spacing: -2px;
+      color: #a3a3a5;
+      white-space: pre;
+      z-index: 1;
+      position: relative;
+      margin-left: 101px;
+      margin-top: 13.5px;
+    }
+
+    .music_0_91 {
+      font-size: 30px;
+      font-family: '苹方_粗体';
+      font-weight: normal;
+      line-height: 42px;
+      letter-spacing: -2px;
+      color: #a3a3a5;
+      white-space: pre;
+      z-index: 0;
+      position: relative;
+      margin-left: 115px;
+      margin-top: 13.5px;
+    }
+
+    .music_0_113 {
+      width: 50px;
+      height: 45px;
+      z-index: 3;
+      position: relative;
+      margin-left: 72.5px;
+      margin-top: 18px;
+    }
+
+    .music_0_105 {
+      width: 50px;
+      height: 50px;
+      z-index: 1;
+      position: relative;
+      margin-left: 24.5px;
+      margin-top: 11px;
+    }
+
+    .music_0_110 {
+      width: 21.1457%;
+      height: 57.5%;
+      position: absolute;
+      top: 21.25%;
+      left: 1.6849%;
+      background: url(https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57517928923/0a68/4a8b/5255/85cccc97cae28beb7bc57b58bdc1eb9b.png) center / cover no-repeat;
+      right: 77.1693%;
+      bottom: 21.25%;
+      z-index: 2;
+    }
+
+    .music_0_5 {
+      width: 1920px;
+      height: 955px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 0;
+      margin-top: 0;
+      margin-left: 0;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(0, #000000, #000000);
+    }
+
+    .music_0_9 {
+      position: relative;
+      width: 1500px;
+      height: 608px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 174px;
+      margin-left: 210px;
+    }
+
+    .music_0_10 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      bottom: 0%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      -webkit-mask-image: linear-gradient(0, #000000, #000000);
+    }
+
+    .music_0_29 {
+      position: relative;
+      width: 1210px;
+      height: 410px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 1;
+      margin-top: 0;
+      margin-left: 145px;
+    }
+
+    .music_0_43 {
+      font-size: 150px;
+      font-family: '苹方_特粗';
+      font-weight: normal;
+      line-height: 210px;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #ff05e2 0%, #e8dacc 100%, #d12b19 100%, #fff2ff 100%, #3525c2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      white-space: pre;
+      z-index: 2;
+      position: relative;
+      margin-top: -5.5px;
+      margin-left: 0;
+    }
+
+    .music_0_31 {
+      position: relative;
+      width: 377px;
+      height: 310px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 0;
+      margin-top: -204.5px;
+      margin-left: 833px;
+    }
+
+    .music_0_32 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      right: 0%;
+      bottom: 0%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      -webkit-mask-image: linear-gradient(0, #000000, #000000);
+    }
+
+    .music_0_33 {
+      width: 384px;
+      height: 347px;
+      position: relative;
+      flex-shrink: 0;
+      margin-top: -2px;
+      margin-left: -3px;
+    }
+
+    .music_0_38 {
+      text-align: center;
+      font-size: 150px;
+      font-family: '苹方_特粗';
+      font-weight: normal;
+      line-height: 210px;
+      background: linear-gradient(90deg, #ac32e4 0%, #7918f2 48%, #4801ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      white-space: pre;
+      z-index: 1;
+      position: relative;
+      margin-top: -110px;
+      margin-left: 460px;
+    }
+
+    .music_0_48 {
+      position: relative;
+      width: 804px;
+      height: 51px;
+      font-size: 36px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 50px;
+      color: #a6a6a6;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+      margin-top: 0;
+      margin-left: 348px;
+    }
+
+    .music_0_50 {
+      position: relative;
+      margin-top: 0.5px;
+      margin-left: 0;
+    }
+
+    .music_0_13 {
+      position: relative;
+      width: 220px;
+      height: 90px;
+      text-align: center;
+      font-size: 30px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 42px;
+      color: #ffffff;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 0;
+      margin-top: 57px;
+      margin-left: 641px;
+    }
+
+    .music_0_14 {
+      position: absolute;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      border-width: 1.5px 1.5px 1.5px 1.5px;
+      border-style: solid;
+      border-color: #383838;
+      background-color: #0071e3;
+      right: 0%;
+      bottom: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .music_0_19 {
+      position: relative;
+      margin-top: 24px;
+      margin-left: 35px;
+    }
+
+    .music_0_24 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      background-color: rgba(255, 255, 255, 0);
+      box-shadow: inset 0px 0px 4px 0px #ffffff;
+      right: 0%;
+      bottom: 0%;
+    }
+
+    .music_0_66 {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+      margin-top: 0;
+      margin-left: 0;
+      background-color: #1d1d1f;
+    }
+
+    .music_0_70 {
+      position: relative;
+      width: 1350px;
+      height: 645px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      margin-top: 218px;
+      margin-left: 285px;
+    }
+
+    .music_0_76 {
+      position: relative;
+      width: 1350px;
+      height: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 1;
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    .music_0_81 {
+      width: 1350px;
+      font-size: 150px;
+      font-family: '苹方_特粗';
+      font-weight: normal;
+      line-height: 210px;
+      background: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      z-index: 1;
+      position: relative;
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    .music_0_78 {
+      width: 29.3333%;
+      height: 48.3333%;
+      position: absolute;
+      top: 0%;
+      left: 70.6667%;
+      background: url(https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57517931040/1bb5/403e/97a2/a7a2baf3a77dc93e64bb33be3b273a29.png) center / cover no-repeat;
+      right: 0%;
+      bottom: 51.6667%;
+      z-index: 0;
+    }
+
+    .music_0_84 {
+      position: relative;
+      width: 324px;
+      height: 51px;
+      font-size: 36px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 50px;
+      color: #a6a6a6;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 2;
+      margin-top: 0;
+      margin-left: 513px;
+    }
+
+    .music_0_86 {
+      position: relative;
+      margin-top: 0;
+      margin-left: 0;
+    }
+
+    .music_0_72 {
+      position: relative;
+      width: 220px;
+      height: 90px;
+      text-align: center;
+      font-size: 30px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 42px;
+      color: #ffffff;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 0;
+      margin-top: 84px;
+      margin-left: 566px;
+    }
+
+    .music_0_73 {
+      position: absolute;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      border-width: 1.5px 1.5px 1.5px 1.5px;
+      border-style: solid;
+      border-color: #383838;
+      background-color: #0071e3;
+      right: 0%;
+      bottom: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .music_0_74 {
+      position: relative;
+      margin-top: 24px;
+      margin-left: 50px;
+    }
+
+    .music_0_75 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      background-color: rgba(255, 255, 255, 0);
+      box-shadow: inset 0px 0px 4px 0px #ffffff;
+      right: 0%;
+      bottom: 0%;
+    }
+
+    .music_0_118 {
+      position: relative;
+      width: 690px;
+      height: 458px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 4;
+      margin-top: 189px;
+      margin-left: 615px;
+    }
+
+    .music_0_123 {
+      width: 240px;
+      height: 240px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 1;
+      margin-top: 0;
+      margin-left: 225px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(0, #000000, #000000);
+    }
+
+    .music_0_125 {
+      position: absolute;
+      width: 66.6667%;
+      height: 92.0833%;
+      top: 3.75%;
+      left: 16.6667%;
+      right: 16.6667%;
+      bottom: 4.1667%;
+      background: url(https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584197472/9241/82a1/6613/91793216f3217f9fdafdf1f1998a7171.png) center / cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .music_0_126 {
+      width: 50%;
+      height: 9.0498%;
+      position: absolute;
+      top: 40.9502%;
+      left: 25%;
+      right: 25%;
+      bottom: 50%;
+    }
+
+    .music_0_127 {
+      width: 50%;
+      height: 9.0498%;
+      position: absolute;
+      top: 59.276%;
+      left: 25%;
+      right: 25%;
+      bottom: 31.6742%;
+    }
+
+    .music_0_128 {
+      width: 50%;
+      height: 9.0498%;
+      position: absolute;
+      top: 23.3032%;
+      left: 25%;
+      right: 25%;
+      bottom: 67.6471%;
+    }
+
+    .music_0_120 {
+      font-size: 150px;
+      font-family: '苹方_特粗';
+      font-weight: normal;
+      line-height: 210px;
+      background: linear-gradient(270deg, #bdbbbe 0%, #9d9ea3 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: pre;
+      z-index: 0;
+      position: relative;
+      margin-top: 8px;
+      margin-left: 0;
+    }
+
+    .music_0_55 {
+      position: absolute;
+      width: 1920px;
+      height: 2px;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: auto;
+      margin-top: 1620px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 1;
+    }
+
+    .music_0_57 {
+      position: relative;
+      width: 1350px;
+      height: 645px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      isolation: isolate;
+      z-index: 1;
+      flex-shrink: 0;
+      margin-top: 217.5px;
+      margin-left: 285px;
+    }
+
+    .music_0_63 {
+      position: relative;
+      width: 1115px;
+      height: 51px;
+      font-size: 36px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 50px;
+      color: #a6a6a6;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 1;
+      margin-top: 435px;
+      margin-left: 118px;
+    }
+
+    .music_0_65 {
+      position: relative;
+      margin-top: 0;
+      margin-left: 414px;
+    }
+
+    .music_0_59 {
+      position: relative;
+      width: 220px;
+      height: 90px;
+      text-align: center;
+      font-size: 30px;
+      font-family: '苹方_中等';
+      font-weight: normal;
+      line-height: 42px;
+      color: #ffffff;
+      white-space: pre;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      z-index: 0;
+      margin-top: 69px;
+      margin-left: 566px;
+    }
+
+    .music_0_60 {
+      position: absolute;
+      margin-top: -1px;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      margin-left: -1px;
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      border-width: 1.5px 1.5px 1.5px 1.5px;
+      border-style: solid;
+      border-color: #383838;
+      background-color: #0071e3;
+      right: 0%;
+      bottom: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .music_0_61 {
+      position: relative;
+      margin-top: 24px;
+      margin-left: 50px;
+    }
+
+    .music_0_62 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      border-radius: 100px;
+      background-color: rgba(255, 255, 255, 0);
+      box-shadow: inset 0px 0px 4px 0px #ffffff;
+      right: 0%;
+      bottom: 0%;
+    }
+
+    .music_0_56 {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      background-color: #000000;
+      right: 0%;
+      bottom: 0%;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="music_0_1">
+    <div class="music_0_87">
+      <div class="music_0_88">
+        <div class="music_0_89"><span class="music_0_97">App/项目</span><span class="music_0_96">开发文档</span><span
+            class="music_0_91">了解团队</span></div>
+        <img class="music_0_113"
+          src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584196501/b9ce/7e85/4619/a6e7a88864e92be3ea213ef8f60afb66.png" /><img
+          class="music_0_105"
+          src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584194634/93c2/37df/505c/39022ea004753e52ff64a16722ba4242.png" />
+        <div class="music_0_110"></div>
+      </div>
+    </div>
+    <div class="music_0_5">
+      <div class="music_0_9">
+        <div class="music_0_10">
+          <div class="music_0_29">
+            <span class="music_0_43">精心设计的App</span>
+            <div class="music_0_31">
+              <div class="music_0_32">
+                <img class="music_0_33"
+                  src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584197315/3341/2e59/3977/7f0e82ad331f6a569b1041bc883648cc.png" />
+              </div>
+            </div>
+            <span class="music_0_38">怎样都顺心</span>
+          </div>
+          <div class="music_0_48"><span class="music_0_50">每一个 App 的细节都经过打磨，尽显极致的用户体验！</span></div>
+          <div class="music_0_13">
+            <div class="music_0_14">
+              <span class="music_0_19">进一步探索</span>
+              <div class="music_0_24"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="music_0_66">
+      <div class="music_0_70">
+        <div class="music_0_76">
+          <span class="music_0_81">构建<br />属于我们自己的世界</span>
+          <div class="music_0_78"></div>
+        </div>
+        <div class="music_0_84"><span class="music_0_86">小小团队，大大潜能</span></div>
+        <div class="music_0_72">
+          <div class="music_0_73">
+            <span class="music_0_74">了解团队</span>
+            <div class="music_0_75"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="music_0_118">
+      <div class="music_0_123">
+        <div class="music_0_125">
+          <img class="music_0_126"
+            src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584196544/757c/1a14/8556/44fcd50e7eb628444caaf263b767b798.png" /><img
+            class="music_0_127"
+            src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584195632/0bd1/b436/329d/d64cedd294632f5eb12be9afddb9798e.png" /><img
+            class="music_0_128"
+            src="https://seal-img.nos-jd.163yun.com/obj/w5rCgMKVw6DCmGzCmsK-/57584195632/0bd1/b436/329d/d64cedd294632f5eb12be9afddb9798e.png" />
+        </div>
+      </div>
+      <span class="music_0_120">#开发文档</span>
+    </div>
+    <div class="music_0_55">
+      <div class="music_0_57">
+        <div class="music_0_63"><span class="music_0_65">总要写点什么吧！</span></div>
+        <div class="music_0_59">
+          <div class="music_0_60">
+            <span class="music_0_61">查看文档</span>
+            <div class="music_0_62"></div>
+          </div>
+        </div>
+      </div>
+      <div class="music_0_56"></div>
+    </div>
+  </div>
+</body>
+
+</html>
